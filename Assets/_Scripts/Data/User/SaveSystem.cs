@@ -40,14 +40,14 @@ namespace _Scripts.Data.User
 
         private void SaveData()
         {
-            string path = Application.persistentDataPath + "/savefileeee.json";
+            string path = Application.dataPath + "/Resources/Data/savefile.json";
             string json = JsonUtility.ToJson(m_userData);
             File.WriteAllText(path, json); 
         }
         
         private UserData LoadData()
         {
-            string path = Application.persistentDataPath + "/savefileeee.json";
+            string path = Application.dataPath + "/Resources/Data/savefile.json";
             
             if (File.Exists(path))
             {
