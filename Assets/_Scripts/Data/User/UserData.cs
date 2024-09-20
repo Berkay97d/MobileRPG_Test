@@ -4,13 +4,13 @@ namespace _Scripts.Data.User
 {
     public class UserData
     {
-        private int _battleCount;
-        private HashSet<int> _ownedHeroIds;
+        public int _battleCount;
+        public List<int> _ownedHeroIds;
 
         public UserData(int battleCount = 0)
         {
             _battleCount = battleCount;
-            _ownedHeroIds = new HashSet<int>();
+            _ownedHeroIds = new List<int>();
         }
 
         public int GetBattleCount()
@@ -28,7 +28,7 @@ namespace _Scripts.Data.User
             _ownedHeroIds.Add(heroId);
         }
 
-        public HashSet<int> GetOwnedHeroIds()
+        public List<int> GetOwnedHeroIds()
         {
             return _ownedHeroIds;
         }
