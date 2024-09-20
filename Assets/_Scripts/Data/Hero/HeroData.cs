@@ -6,6 +6,7 @@ using UnityEngine;
 [Serializable]
 public struct HeroData
 {
+    public int _heroID;
     public string _name;
     public int _maxHealth;
     public int _attackDamage;

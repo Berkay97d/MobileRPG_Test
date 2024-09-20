@@ -13,61 +13,71 @@ MonoBehaviour:
   m_Name: HeroDatas
   m_EditorClassIdentifier: 
   _heroDatas:
-  - _name: Hero1
+  - _heroID: 0
+    _name: Hero1
     _maxHealth: 2
     _attackDamage: 3
     _experience: 4
     _level: 5
     _sprite: {fileID: -982556386, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
-  - _name: Hero2
+  - _heroID: 1
+    _name: Hero2
     _maxHealth: 2
     _attackDamage: 3
     _experience: 4
     _level: 5
     _sprite: {fileID: -2080961870, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
-  - _name: Hero3
+  - _heroID: 2
+    _name: Hero3
     _maxHealth: 2
     _attackDamage: 3
     _experience: 4
     _level: 5
     _sprite: {fileID: 1573201573, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
-  - _name: Hero4
+  - _heroID: 3
+    _name: Hero4
     _maxHealth: 2
     _attackDamage: 3
     _experience: 4
     _level: 5
     _sprite: {fileID: 428664467, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
-  - _name: Hero5
+  - _heroID: 4
+    _name: Hero5
     _maxHealth: 2
     _attackDamage: 3
     _experience: 4
     _level: 5
     _sprite: {fileID: 1111249066, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
-  - _name: Hero6
+  - _heroID: 5
+    _name: Hero6
     _maxHealth: 2
     _attackDamage: 3
     _experience: 4
     _level: 5
     _sprite: {fileID: 639549679, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
-  - _name: Hero7
+  - _heroID: 6
+    _name: Hero7
     _maxHealth: 2
     _attackDamage: 3
     _experience: 4
     _level: 5
     _sprite: {fileID: 1076751007, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
-  - _name: Hero8
+  - _heroID: 7
+    _name: Hero8
     _maxHealth: 2
     _attackDamage: 3
     _experience: 4
     _level: 5
     _sprite: {fileID: -1781087546, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
-  - _name: Hero9
+  - _heroID: 8
+    _name: Hero9
     _maxHealth: 2
     _attackDamage: 3
     _experience: 4
     _level: 5
     _sprite: {fileID: 1364055732, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
-  - _name: Hero10
+  - _heroID: 9
+    _name: Hero10
     _maxHealth: 2
     _attackDamage: 3
     _experience: 4
