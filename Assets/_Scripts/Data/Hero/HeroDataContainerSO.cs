@@ -30,8 +30,20 @@ namespace _Scripts
                 }
             }
         }
-        
-        
+
+        public HeroData GetHeroDataById(int Id)
+        {
+            foreach (var heroData in _heroDatas)
+            {
+                if (heroData._heroID == Id)
+                {
+                    return heroData;
+                }
+            }
+            
+            Debug.LogError("Unreachable Code");
+            return new HeroData();
+        }
         
     }
 }

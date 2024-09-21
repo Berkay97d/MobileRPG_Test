@@ -8,15 +8,15 @@ namespace _Scripts.Data.User
     public class SaveSystem : MonoBehaviour
     {
         [SerializeField] private int[] _defaultOwnedHeroIds;
-        
-        
+
+        private static SaveSystem MS_INSTANCE;
         private UserData m_userData;
         
         
         private void Awake()
         {
             m_userData = LoadData();
-            
+            MS_INSTANCE = this;
         }
         
         private void SaveData(UserData data)
@@ -60,6 +60,11 @@ namespace _Scripts.Data.User
             m_userData.AddHeroToUser(heroId);
             
             SaveData(m_userData);
+        }
+
+        public static UserData GetUserData()
+        {
+            return MS_INSTANCE.m_userData;
         }
     }
 }
