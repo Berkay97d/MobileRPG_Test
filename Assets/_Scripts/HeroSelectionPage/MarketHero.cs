@@ -30,19 +30,19 @@ public class MarketHero : MonoBehaviour
     private void OnShortPress()
     {
         if (!_mainTransform.gameObject.activeSelf) return;
-        
+        Debug.Log(name+ " ADD ARMY");
     }
 
     private void OnLongPressEnd()
     {
         if (!_mainTransform.gameObject.activeSelf) return;
-        
+        Debug.Log(name+ " CLOSE INFO");
     }
 
     private void OnLongPressStart()
     {
         if (!_mainTransform.gameObject.activeSelf) return;
-        
+        Debug.Log(name+ " OPEN INFO");
     }
 
 

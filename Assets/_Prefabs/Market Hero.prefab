@@ -280,6 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainTransform: {fileID: 82444270158149357}
+  _marketHeroClickHandler: {fileID: 8394366981395273590}
 --- !u!114 &817192232285051128
 MonoBehaviour:
   m_ObjectHideFlags: 0
