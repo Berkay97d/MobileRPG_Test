@@ -21,8 +21,12 @@ namespace _Scripts.HeroSelectionPage
 
             for (int i = 0; i < heroIds.Count; i++)
             {
-                _marketHeroes[i].SetActiveMarketHero(true);
                 _marketHeroes[i].SetHeroData(_heroDataContainer.GetHeroDataById(heroIds[i]));
+            }
+
+            for (int i = heroIds.Count; i < _marketHeroes.Length; i++)
+            {
+                _marketHeroes[i].SetActiveMarketHero(false);
             }
         }
         
