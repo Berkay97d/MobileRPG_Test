@@ -295,6 +295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_marketHero: {fileID: 3677010000806677921}
   _heroImage: {fileID: 4906397325595328216}
+  _bgImage: {fileID: 8947663652645079480}
 --- !u!114 &8394366981395273590
 MonoBehaviour:
   m_ObjectHideFlags: 0

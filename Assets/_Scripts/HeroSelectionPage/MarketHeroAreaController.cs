@@ -14,7 +14,7 @@ namespace _Scripts.HeroSelectionPage
         {
             OpenMarketHeroes();
         }
-
+        
         private void OpenMarketHeroes()
         {
             var heroIds = SaveSystem.GetUserData()._ownedHeroIds;

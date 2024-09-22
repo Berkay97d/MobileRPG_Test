@@ -1,18 +1,20 @@
 using System;
+using _Scripts;
 using _Scripts.HeroSelectionPage;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UI;
+
 
 public class MarketHero : MonoBehaviour
 {
     [SerializeField] private Transform _mainTransform;
     [SerializeField] private MarketHeroClickHandler _marketHeroClickHandler;
     
-    public event Action<HeroData> OnHeroDataSetted;
+    public event Action OnHeroDataSetted;
+    public event Action<ArmyActionResult> OnHeroArmyStateChange;
     
     private HeroData m_heroData;
 
+    
     private void Start()
     {
         _marketHeroClickHandler.OnLongPressStart += OnLongPressStart;
@@ -30,7 +32,8 @@ public class MarketHero : MonoBehaviour
     private void OnShortPress()
     {
         if (!_mainTransform.gameObject.activeSelf) return;
-        Debug.Log(name+ " ADD ARMY");
+        var actionResult = Army.DoAddRemoveArmyActions(m_heroData);
+        OnHeroArmyStateChange?.Invoke(actionResult);
     }
 
     private void OnLongPressEnd()
@@ -55,7 +58,12 @@ public class MarketHero : MonoBehaviour
     {
         m_heroData = heroData;
         
-        OnHeroDataSetted?.Invoke(m_heroData);
+        OnHeroDataSetted?.Invoke();
+    }
+
+    public HeroData GetHeroData()
+    {
+        return m_heroData;
     }
     
 }
