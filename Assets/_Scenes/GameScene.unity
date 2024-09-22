@@ -1257,7 +1257,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &535001204
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4264,13 +4264,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1857415859}
+  - component: {fileID: 1857415860}
   m_Layer: 5
   m_Name: Character Info Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1857415859
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4291,6 +4292,25 @@ RectTransform:
   m_AnchoredPosition: {x: -120, y: 0}
   m_SizeDelta: {x: 330, y: 475}
   m_Pivot: {x: 1, y: 0.5}
+--- !u!114 &1857415860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857415858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 029d0bb244c84abc99878ffaa183b09e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mainTransform: {fileID: 535001204}
+  _heroImage: {fileID: 1073298106}
+  _name: {fileID: 1633713074}
+  _health: {fileID: 1795385678}
+  _attack: {fileID: 1184937608}
+  _experience: {fileID: 1954749132}
+  _level: {fileID: 1582737461}
 --- !u!1 &1954749130
 GameObject:
   m_ObjectHideFlags: 0

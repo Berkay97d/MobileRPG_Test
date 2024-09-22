@@ -36,18 +36,17 @@ public class MarketHero : MonoBehaviour
         OnHeroArmyStateChange?.Invoke(actionResult);
     }
 
-    private void OnLongPressEnd()
-    {
-        if (!_mainTransform.gameObject.activeSelf) return;
-        Debug.Log(name+ " CLOSE INFO");
-    }
-
     private void OnLongPressStart()
     {
         if (!_mainTransform.gameObject.activeSelf) return;
-        Debug.Log(name+ " OPEN INFO");
+        HeroInfoArea.OpenInfo(m_heroData);
     }
-
+    
+    private void OnLongPressEnd()
+    {
+        if (!_mainTransform.gameObject.activeSelf) return;
+        HeroInfoArea.CloseInfo();
+    }
 
     public void SetActiveMarketHero(bool isActive)
     {
