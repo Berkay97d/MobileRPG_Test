@@ -19,6 +19,8 @@ namespace _Scripts.HeroSelectionPage
         {
             var heroIds = SaveSystem.GetUserData()._ownedHeroIds;
 
+            Debug.Log("OWNED HERO ID COUNT: " + heroIds.Count);
+            
             for (int i = 0; i < heroIds.Count; i++)
             {
                 _marketHeroes[i].SetHeroData(_heroDataContainer.GetHeroDataById(heroIds[i]));

@@ -15,8 +15,8 @@ namespace _Scripts.Data.User
         
         private void Awake()
         {
-            m_userData = LoadData();
             MS_INSTANCE = this;
+            m_userData = LoadData();
         }
         
         private void SaveData(UserData data)
@@ -32,6 +32,7 @@ namespace _Scripts.Data.User
             string path = Application.dataPath + "/Resources/Data/savefile.json";
             if (File.Exists(path))
             {
+                Debug.Log("VAR OLAN DATA GETİRİLDİ");
                 string json = File.ReadAllText(path);
                 UserData data = JsonUtility.FromJson<UserData>(json);
                 return data;
@@ -39,9 +40,9 @@ namespace _Scripts.Data.User
 
             var userData = new UserData();
             AddDefaultHeroes(userData);
-            
-            return new UserData(); // Return new SaveData with default values if no file exists
-            
+            Debug.Log("YENİ DATA OLUŞTURULUP GÖNDERİLDİ");
+            return userData;
+
         }
 
         private void AddDefaultHeroes(UserData userData)
