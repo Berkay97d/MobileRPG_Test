@@ -13,12 +13,14 @@ namespace _Scripts.Battle
         {
             _battleHero.OnHeroDataSetted += OnHeroDataSetted;
             _battleHero.OnIsAttackHeroSetted += OnIsAttackHeroSetted;
+            BattleHeroAttacker.OnPlayerAttackStart += OnPlayerAttackStart;
         }
         
         private void OnDestroy()
         {
             _battleHero.OnHeroDataSetted -= OnHeroDataSetted;
             _battleHero.OnIsAttackHeroSetted -= OnIsAttackHeroSetted;
+            BattleHeroAttacker.OnPlayerAttackStart -= OnPlayerAttackStart;
         }
 
         private void OnHeroDataSetted(HeroData heroData)
@@ -34,6 +36,11 @@ namespace _Scripts.Battle
                 return;
             }
             
+            _image.color = Color.white;
+        }
+        
+        private void OnPlayerAttackStart()
+        {
             _image.color = Color.white;
         }
     }

@@ -70,6 +70,11 @@ namespace _Scripts.Battle
             m_selectedBattleHero = battleHero;
             OnBattleHeroChange?.Invoke(battleHero);
         }
+
+        public BattleHero GetSelectedBattleHero()
+        {
+            return m_selectedBattleHero;
+        }
         
         
     }
