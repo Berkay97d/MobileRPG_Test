@@ -33,6 +33,11 @@ namespace _Scripts
             return ArmyActionResult.ADDED;
         }
 
+        public static List<HeroData> GetAllHeroDatas()
+        {
+            return MS_HEROES;
+        }
+
         
     }
 }

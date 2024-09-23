@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8638421123832043540}
+  - component: {fileID: 8739599105451667176}
+  - component: {fileID: 1393044071117439020}
   m_Layer: 0
   m_Name: Battle Hero
   m_TagString: Untagged
@@ -32,6 +34,32 @@ Transform:
   - {fileID: 5973752277601224635}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8739599105451667176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568087296974874294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aeddf456f44429fbb0f8602600fd79a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1393044071117439020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568087296974874294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39bd537d86164e6fa6b78b03dab59cfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _battleHero: {fileID: 8739599105451667176}
+  _renderer: {fileID: 1287009777084353768}
 --- !u!1 &7513525911871716202
 GameObject:
   m_ObjectHideFlags: 0
