@@ -7,12 +7,50 @@ namespace _Scripts.Battle
     {
         [SerializeField] private BattleHero[] _battleHeroes;
 
+        public static event Action<BattleHero> OnBattleHeroChange; 
+        
+        private BattleHero m_selectedBattleHero;
+        
 
         private void Start()
         {
             PasteArmyHeroes();
+
+            foreach (var battleHero in _battleHeroes)
+            {
+                battleHero.OnBattleHeroShortPress += OnBattleHeroShortPress;
+            }
         }
-        
+
+        private void OnDestroy()
+        {
+            foreach (var battleHero in _battleHeroes)
+            {
+                battleHero.OnBattleHeroShortPress -= OnBattleHeroShortPress;
+            }
+        }
+
+        private void OnBattleHeroShortPress(BattleHero battleHero)
+        {
+            if (m_selectedBattleHero == battleHero)
+            {
+                battleHero.SetIsAttackHero(false);
+                SetSelectedHero(null);
+                return;
+            }
+
+            if (m_selectedBattleHero != null)
+            {
+                m_selectedBattleHero.SetIsAttackHero(false);
+                battleHero.SetIsAttackHero(true);
+                SetSelectedHero(battleHero);
+                return;
+            }
+            
+            battleHero.SetIsAttackHero(true);
+            SetSelectedHero(battleHero);
+        }
+
         private void PasteArmyHeroes()
         {
             var heroDatas = Army.GetAllHeroDatas();
@@ -26,5 +64,13 @@ namespace _Scripts.Battle
                 _battleHeroes[i].SetHeroData(heroDatas[i]);
             }
         }
+
+        private void SetSelectedHero(BattleHero battleHero)
+        {
+            m_selectedBattleHero = battleHero;
+            OnBattleHeroChange?.Invoke(battleHero);
+        }
+        
+        
     }
 }

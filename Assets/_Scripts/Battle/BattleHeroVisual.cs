@@ -12,16 +12,29 @@ namespace _Scripts.Battle
         private void Awake()
         {
             _battleHero.OnHeroDataSetted += OnHeroDataSetted;
+            _battleHero.OnIsAttackHeroSetted += OnIsAttackHeroSetted;
         }
-
+        
         private void OnDestroy()
         {
             _battleHero.OnHeroDataSetted -= OnHeroDataSetted;
+            _battleHero.OnIsAttackHeroSetted -= OnIsAttackHeroSetted;
         }
 
         private void OnHeroDataSetted(HeroData heroData)
         {
             _image.sprite = heroData._sprite;
+        }
+        
+        private void OnIsAttackHeroSetted(bool isAttackHero)
+        {
+            if (isAttackHero)
+            {
+                _image.color = Color.green;
+                return;
+            }
+            
+            _image.color = Color.white;
         }
     }
 }
