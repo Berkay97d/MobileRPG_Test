@@ -33,7 +33,9 @@ namespace _Scripts.HeroSelectionPage
         {
             m_isHolding = true;      
             m_holdTime = 0f;        
-            m_longPressTriggered = false; 
+            m_longPressTriggered = false;
+
+            Debug.Log("POİNTER DOWN");
         }
 
         public void OnPointerUp(PointerEventData eventData)
@@ -45,7 +47,7 @@ namespace _Scripts.HeroSelectionPage
                 OnShortPress?.Invoke();
                 return;
             }
-            
+            Debug.Log("POİNTER Up");
             OnLongPressEnd?.Invoke();
         }
 

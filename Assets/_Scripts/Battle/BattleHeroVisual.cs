@@ -1,12 +1,13 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace _Scripts.Battle
 {
     public class BattleHeroVisual : MonoBehaviour
     {
         [SerializeField] private BattleHero _battleHero;
-        [SerializeField] private SpriteRenderer _renderer;
+        [SerializeField] private Image _image;
 
         private void Awake()
         {
@@ -20,7 +21,7 @@ namespace _Scripts.Battle
 
         private void OnHeroDataSetted(HeroData heroData)
         {
-            _renderer.sprite = heroData._sprite;
+            _image.sprite = heroData._sprite;
         }
     }
 }
