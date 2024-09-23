@@ -11,7 +11,11 @@ namespace _Scripts.Battle
         [SerializeField] private Health _health; 
         [SerializeField] private Image _healthBarRed;
         [SerializeField] private Image _healthBarWhite;
-
+        [SerializeField] private float _whiteBarDelay;
+        [SerializeField] private float _whiteBarReduceTime;
+        
+        
+        
         private void Start()
         {
             _health.OnDamaged += OnDamaged;
@@ -34,14 +38,13 @@ namespace _Scripts.Battle
             IEnumerator UpdateHealthRoutine()
             {
                 float fillAmount = _health.GetCurrentHealth() / _health.GetMaxHealth();
-                Debug.Log(_health.GetCurrentHealth());
-                Debug.Log(_health.GetMaxHealth());
-                Debug.Log(fillAmount);
-                _healthBarRed.DOFillAmount(fillAmount, .2f);
-
-                yield return new WaitForSeconds(1f);
                 
-                _healthBarWhite.DOFillAmount(fillAmount, .4f);
+                _healthBarRed.fillAmount = fillAmount;
+
+                yield return new WaitForSeconds(_whiteBarDelay);
+                
+                _healthBarWhite.DOFillAmount(fillAmount, _whiteBarReduceTime)
+                    .SetEase(Ease.OutSine);
             }
             
         }

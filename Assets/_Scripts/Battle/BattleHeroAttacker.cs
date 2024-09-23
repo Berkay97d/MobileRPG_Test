@@ -7,6 +7,7 @@ namespace _Scripts.Battle
 {
     public class BattleHeroAttacker : MonoBehaviour
     {
+        [SerializeField] private BattleHero _battleHero;
         [SerializeField] private RectTransform _attackPosition;
         [SerializeField] private RectTransform _enemyPosition;
         [SerializeField] private float _attackPositionMoveTime;
@@ -20,8 +21,23 @@ namespace _Scripts.Battle
 
         private RectTransform m_startTransform;
         private HeroData m_heroData;
-        
-        
+
+
+        private void Start()
+        {
+            _battleHero.OnHeroDataSetted += OnHeroDataSetted;
+        }
+
+        private void OnDestroy()
+        {
+            _battleHero.OnHeroDataSetted -= OnHeroDataSetted;
+        }
+
+        private void OnHeroDataSetted(HeroData heroData)
+        {
+            SetHeroData(heroData);
+        }
+
         public void StartAttack()
         {
             OnPlayerAttackStart?.Invoke();
@@ -56,7 +72,7 @@ namespace _Scripts.Battle
             
         }
 
-        public void SetHeroData(HeroData heroData)
+        private void SetHeroData(HeroData heroData)
         {
             m_heroData = heroData;
         }

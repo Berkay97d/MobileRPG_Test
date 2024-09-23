@@ -64,7 +64,6 @@ namespace _Scripts.Battle
             m_heroData = heroData;
             OnHeroDataSetted?.Invoke(m_heroData);
             
-            _battleHeroAttacker.SetHeroData(m_heroData);
             _health.SetMaxHealth(m_heroData._maxHealth);
         }
 

@@ -129,6 +129,8 @@ MonoBehaviour:
   _health: {fileID: 0}
   _healthBarRed: {fileID: 971995787535123536}
   _healthBarWhite: {fileID: 2886544611842714919}
+  _whiteBarDelay: 0.6
+  _whiteBarReduceTime: 0.3
 --- !u!1 &5648180095506461077
 GameObject:
   m_ObjectHideFlags: 0

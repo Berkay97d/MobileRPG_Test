@@ -67,6 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1c73e38af814d25b9cccb754cd2467d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _battleHero: {fileID: 624573263400085093}
   _attackPosition: {fileID: 0}
   _enemyPosition: {fileID: 0}
   _attackPositionMoveTime: 2
