@@ -22,14 +22,15 @@ namespace _Scripts.Data.User
         private void SaveData(UserData data)
         {
             string path = Application.dataPath + "/Resources/Data/savefile.json";
+            //string path = Application.persistentDataPath + "/savefile.json"; //TODO CHANGE PATHS FOR MOBILE BUILD
             string json = JsonUtility.ToJson(data);
-            File.WriteAllText(path, json); // Write JSON data to the file
+            File.WriteAllText(path, json); 
         }
-
-        // Load the saved battleCount from the JSON file
+        
         private UserData LoadData()
         {
             string path = Application.dataPath + "/Resources/Data/savefile.json";
+            //string path = Application.persistentDataPath + "/savefile.json"; //TODO CHANGE PATHS FOR MOBILE BUILD
             if (File.Exists(path))
             {
                 Debug.Log("VAR OLAN DATA GETİRİLDİ");
