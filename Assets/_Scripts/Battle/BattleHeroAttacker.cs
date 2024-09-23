@@ -63,7 +63,7 @@ namespace _Scripts.Battle
                 transform.DOMove(_attackPosition.position, 0.5f)
                     .SetEase(Ease.Flash);
                 
-                yield return new WaitForSeconds(_attackPositionMoveTime + _waitAfterAttackTime);
+                yield return new WaitForSeconds(_waitAfterAttackTime);
 
 
                 transform.DOMove(startPos, _attackPositionMoveTime);

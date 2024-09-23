@@ -420,7 +420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4926334334597188125, guid: 7c4dcaf2638719d42ba04491b68acb98, type: 3}
       propertyPath: _waitBeforeAttackTime
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4926334334597188125, guid: 7c4dcaf2638719d42ba04491b68acb98, type: 3}
       propertyPath: _attackPositionMoveTime
@@ -1039,7 +1039,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fcebf1ada2c45d68170d32c03c9dde7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyDataContainer: {fileID: 11400000, guid: ced12150ae7a43143b592dc253ce1320, type: 2}
   _health: {fileID: 521538070}
+  _image: {fileID: 1258055609}
 --- !u!1001 &565026337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1070,7 +1072,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4926334334597188125, guid: 7c4dcaf2638719d42ba04491b68acb98, type: 3}
       propertyPath: _waitBeforeAttackTime
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4926334334597188125, guid: 7c4dcaf2638719d42ba04491b68acb98, type: 3}
       propertyPath: _attackPositionMoveTime
@@ -2147,6 +2149,14 @@ PrefabInstance:
       propertyPath: _attackPosition
       value: 
       objectReference: {fileID: 2054060086}
+    - target: {fileID: 4926334334597188125, guid: 7c4dcaf2638719d42ba04491b68acb98, type: 3}
+      propertyPath: _waitAfterAttackTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926334334597188125, guid: 7c4dcaf2638719d42ba04491b68acb98, type: 3}
+      propertyPath: _waitBeforeAttackTime
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5862221755288705355, guid: 7c4dcaf2638719d42ba04491b68acb98, type: 3}
       propertyPath: m_Pivot.x
       value: 0

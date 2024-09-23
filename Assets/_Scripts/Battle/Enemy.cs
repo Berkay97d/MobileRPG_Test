@@ -1,17 +1,25 @@
 ﻿using System;
+using _Scripts.Data.Enemy;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace _Scripts.Battle
 {
     public class Enemy : MonoBehaviour
     {
+        [SerializeField] private EnemyDataContainerSO _enemyDataContainer;
         [SerializeField] private Health _health;
+        [SerializeField] private Image _image;
         
+        
+        private EnemyData m_enemyData;
         
 
         private void Awake()
         {
-            _health.SetMaxHealth(10);
+            m_enemyData = _enemyDataContainer.GetEnemyDataByBattleCount();
+            _health.SetMaxHealth(m_enemyData._health);
+            _image.sprite = m_enemyData._sprite;
         }
 
         public Health GetHealth()
