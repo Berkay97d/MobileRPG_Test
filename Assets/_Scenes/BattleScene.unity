@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 92098636}
   - component: {fileID: 92098638}
   - component: {fileID: 92098637}
+  - component: {fileID: 92098639}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -150,7 +151,7 @@ RectTransform:
   m_GameObject: {fileID: 92098635}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.05, y: 1.05, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 599951252}
@@ -198,6 +199,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 92098635}
   m_CullTransparentMesh: 1
+--- !u!114 &92098639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92098635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a3842e087c24d108b946b2e07b1a576, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &256875488
 GameObject:
   m_ObjectHideFlags: 0
@@ -987,6 +1000,7 @@ GameObject:
   - component: {fileID: 521538069}
   - component: {fileID: 521538070}
   - component: {fileID: 521538071}
+  - component: {fileID: 521538072}
   m_Layer: 5
   m_Name: Enemy
   m_TagString: Untagged
@@ -1041,7 +1055,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyDataContainer: {fileID: 11400000, guid: ced12150ae7a43143b592dc253ce1320, type: 2}
   _health: {fileID: 521538070}
-  _image: {fileID: 1258055609}
+--- !u!114 &521538072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521538068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a3842e087c24d108b946b2e07b1a576, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &565026337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1297,6 +1322,7 @@ GameObject:
   - component: {fileID: 954006572}
   - component: {fileID: 954006571}
   - component: {fileID: 954006575}
+  - component: {fileID: 954006576}
   m_Layer: 5
   m_Name: Attack Button
   m_TagString: Untagged
@@ -1434,6 +1460,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _button: {fileID: 954006572}
   _battleHeroesController: {fileID: 985595377}
+--- !u!114 &954006576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954006569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a3842e087c24d108b946b2e07b1a576, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &982747412
 GameObject:
   m_ObjectHideFlags: 0
@@ -1479,6 +1517,7 @@ GameObject:
   m_Component:
   - component: {fileID: 985595376}
   - component: {fileID: 985595377}
+  - component: {fileID: 985595378}
   m_Layer: 5
   m_Name: Battle Heroes
   m_TagString: Untagged
@@ -1525,6 +1564,18 @@ MonoBehaviour:
   - {fileID: 7134891879317885402}
   - {fileID: 416397854}
   - {fileID: 565026339}
+--- !u!114 &985595378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985595375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a3842e087c24d108b946b2e07b1a576, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &991831286
 GameObject:
   m_ObjectHideFlags: 0
