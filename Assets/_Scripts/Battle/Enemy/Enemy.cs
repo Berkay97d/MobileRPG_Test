@@ -11,7 +11,6 @@ namespace _Scripts.Battle
         [SerializeField] private Health _health;
         [SerializeField] private Image _image;
         
-        
         private EnemyData m_enemyData;
         
 
@@ -20,6 +19,21 @@ namespace _Scripts.Battle
             m_enemyData = _enemyDataContainer.GetEnemyDataByBattleCount();
             _health.SetMaxHealth(m_enemyData._health);
             _image.sprite = m_enemyData._sprite;
+        }
+
+        private void Start()
+        {
+            BattleHeroAttacker.OnPlayerAttackEnd += OnPlayerAttackEnd;
+        }
+
+        private void OnDestroy()
+        {
+            BattleHeroAttacker.OnPlayerAttackEnd -= OnPlayerAttackEnd;
+        }
+
+        private void OnPlayerAttackEnd()
+        {
+            
         }
 
         public Health GetHealth()

@@ -66,7 +66,11 @@ namespace _Scripts.Battle
                 yield return new WaitForSeconds(_waitAfterAttackTime);
 
 
-                transform.DOMove(startPos, _attackPositionMoveTime);
+                transform.DOMove(startPos, _attackPositionMoveTime)
+                    .OnComplete(() =>
+                    {
+                        OnPlayerAttackEnd?.Invoke();
+                    });
 
             }
             
