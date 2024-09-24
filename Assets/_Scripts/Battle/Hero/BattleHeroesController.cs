@@ -32,6 +32,8 @@ namespace _Scripts.Battle
 
         private void OnBattleHeroShortPress(BattleHero battleHero)
         {
+            if (!battleHero.GetIsAlive()) return;
+            
             if (m_selectedBattleHero == battleHero)
             {
                 battleHero.SetIsAttackHero(false);

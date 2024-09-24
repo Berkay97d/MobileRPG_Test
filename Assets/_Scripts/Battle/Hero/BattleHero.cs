@@ -13,6 +13,7 @@ namespace _Scripts.Battle
         
         private HeroData m_heroData;
         private bool m_canAttack = true;
+        private bool m_isAlive = true;
 
         public event Action<HeroData> OnHeroDataSetted;
         public event Action<BattleHero> OnBattleHeroShortPress;
@@ -71,7 +72,7 @@ namespace _Scripts.Battle
 
         private void OnDead()
         {
-            m_canAttack = false;
+            m_isAlive = false;
             OnHeroDead?.Invoke(this);
         }
 
@@ -96,6 +97,11 @@ namespace _Scripts.Battle
         public Health GetHealth()
         {
             return _health;
+        }
+
+        public bool GetIsAlive()
+        {
+            return m_isAlive;
         }
     }
 }
