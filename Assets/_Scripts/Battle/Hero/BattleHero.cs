@@ -16,7 +16,8 @@ namespace _Scripts.Battle
 
         public event Action<HeroData> OnHeroDataSetted;
         public event Action<BattleHero> OnBattleHeroShortPress;
-        public event Action<bool> OnIsAttackHeroSetted; 
+        public event Action<bool> OnIsAttackHeroSetted;
+        public static event Action<BattleHero> OnHeroDead;
 
 
         private void Start()
@@ -24,20 +25,17 @@ namespace _Scripts.Battle
             _clickHandler.OnLongPressStart += OnLongPressStart;
             _clickHandler.OnLongPressEnd += OnLongPressEnd;
             _clickHandler.OnShortPress += OnShortPress;
+            _health.OnDead += OnDead;
             BattleHeroAttacker.OnPlayerAttackStart += OnPlayerAttackStart;
             EnemyAttacker.OnEnemyAttackEnd += OnEnemyAttackEnd;
         }
-
-        private void OnEnemyAttackEnd()
-        {
-            m_canAttack = true;
-        }
-
+        
         private void OnDestroy()
         {
             _clickHandler.OnLongPressStart -= OnLongPressStart;
             _clickHandler.OnLongPressEnd -= OnLongPressEnd;
             _clickHandler.OnShortPress -= OnShortPress;
+            _health.OnDead -= OnDead;
             BattleHeroAttacker.OnPlayerAttackStart -= OnPlayerAttackStart;
             EnemyAttacker.OnEnemyAttackEnd -= OnEnemyAttackEnd;
         }
@@ -64,6 +62,17 @@ namespace _Scripts.Battle
         private void OnPlayerAttackStart()
         {
             m_canAttack = false;
+        }
+        
+        private void OnEnemyAttackEnd()
+        {
+            m_canAttack = true;
+        }
+
+        private void OnDead()
+        {
+            m_canAttack = false;
+            OnHeroDead?.Invoke(this);
         }
 
         public void SetHeroData(HeroData heroData)

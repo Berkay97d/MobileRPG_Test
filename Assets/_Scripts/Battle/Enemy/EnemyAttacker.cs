@@ -23,11 +23,18 @@ namespace _Scripts.Battle
         private void Start()
         {
             BattleHeroAttacker.OnPlayerAttackEnd += OnPlayerAttackEnd;
+            BattleHero.OnHeroDead += OnBattleHeroDead;
         }
-
+        
         private void OnDestroy()
         {
             BattleHeroAttacker.OnPlayerAttackEnd -= OnPlayerAttackEnd;
+            BattleHero.OnHeroDead -= OnBattleHeroDead;
+        }
+        
+        private void OnBattleHeroDead(BattleHero battleHero)
+        {
+            _battleHeroes.Remove(battleHero);
         }
 
         private void OnPlayerAttackEnd()
