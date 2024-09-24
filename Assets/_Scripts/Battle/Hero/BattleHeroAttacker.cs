@@ -23,7 +23,7 @@ namespace _Scripts.Battle
         private HeroData m_heroData;
 
 
-        private void Start()
+        private void Awake()
         {
             _battleHero.OnHeroDataSetted += OnHeroDataSetted;
         }

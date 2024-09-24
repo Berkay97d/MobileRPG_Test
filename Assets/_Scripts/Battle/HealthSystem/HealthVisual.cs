@@ -16,7 +16,7 @@ namespace _Scripts.Battle
         
         
         
-        private void Start()
+        private void Awake()
         {
             _health.OnDamaged += OnDamaged;
         }
