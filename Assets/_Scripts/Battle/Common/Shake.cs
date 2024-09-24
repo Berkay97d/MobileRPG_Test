@@ -6,9 +6,9 @@ namespace _Scripts.Battle
 {
     public class Shake : MonoBehaviour
     {
-         private static float shakeDuration = 0.5f;  
-         private static float shakeStrength = 10f;  
-         private static int vibrato = 10;            
+         private static float MS_DURATION = 0.5f;  
+         private static float MS_STRENGTH = 10f;  
+         private static int MS_VIBRATO = 10;            
 
         private Vector3 m_startPos;
         
@@ -40,7 +40,7 @@ namespace _Scripts.Battle
         {
             Debug.Log("AAAAAAAAAAAAAAAAA");
             transform
-                .DOShakePosition(shakeDuration, shakeStrength, vibrato)
+                .DOShakePosition(MS_DURATION, MS_STRENGTH, MS_VIBRATO)
                 .OnComplete(() => transform.localPosition = m_startPos); 
         }
     }
