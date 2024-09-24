@@ -11,11 +11,18 @@ namespace _Scripts.Battle
         private void Start()
         {
             BattleHeroAttacker.OnPlayerHit += OnPlayerHit;
+            EnemyAttacker.OnEnemyHit += OnEnemyHit;
         }
-
+        
         private void OnDestroy()
         {
             BattleHeroAttacker.OnPlayerHit -= OnPlayerHit;
+            EnemyAttacker.OnEnemyHit -= OnEnemyHit;
+        }
+        
+        private void OnEnemyHit(BattleHero battleHero, float damage)
+        {
+            battleHero.GetHealth().Damage(damage);
         }
 
         private void OnPlayerHit(HeroData heroData)

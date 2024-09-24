@@ -15,7 +15,7 @@ namespace _Scripts.Battle
         private EnemyData m_enemyData;
         
 
-        private void Awake()
+        private void Start()
         {
             SetEnemyData(_enemyDataContainer.GetEnemyDataByBattleCount());
             
@@ -31,6 +31,11 @@ namespace _Scripts.Battle
         public Health GetHealth()
         {
             return _health;
+        }
+
+        public EnemyData GetEnemyData()
+        {
+            return m_enemyData;
         }
         
     }

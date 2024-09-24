@@ -25,14 +25,21 @@ namespace _Scripts.Battle
             _clickHandler.OnLongPressEnd += OnLongPressEnd;
             _clickHandler.OnShortPress += OnShortPress;
             BattleHeroAttacker.OnPlayerAttackStart += OnPlayerAttackStart;
+            EnemyAttacker.OnEnemyAttackEnd += OnEnemyAttackEnd;
         }
-        
+
+        private void OnEnemyAttackEnd()
+        {
+            m_canAttack = true;
+        }
+
         private void OnDestroy()
         {
             _clickHandler.OnLongPressStart -= OnLongPressStart;
             _clickHandler.OnLongPressEnd -= OnLongPressEnd;
             _clickHandler.OnShortPress -= OnShortPress;
             BattleHeroAttacker.OnPlayerAttackStart -= OnPlayerAttackStart;
+            EnemyAttacker.OnEnemyAttackEnd -= OnEnemyAttackEnd;
         }
 
         private void OnShortPress()
@@ -75,6 +82,11 @@ namespace _Scripts.Battle
         public BattleHeroAttacker GetAttacker()
         {
             return _battleHeroAttacker;
+        }
+
+        public Health GetHealth()
+        {
+            return _health;
         }
     }
 }

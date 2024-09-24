@@ -10,10 +10,7 @@ namespace _Scripts.Battle
 
         public event Action OnDamaged; 
 
-        private void Start()
-        {
-            m_currentHealth = m_maxHealth;
-        }
+        
 
         public void Damage(float damage)
         {
@@ -34,6 +31,7 @@ namespace _Scripts.Battle
         public void SetMaxHealth(float maxHealth)
         {
             m_maxHealth = maxHealth;
+            m_currentHealth = m_maxHealth;
         }
     }
 }

@@ -998,9 +998,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 521538069}
+  - component: {fileID: 521538072}
   - component: {fileID: 521538070}
   - component: {fileID: 521538071}
-  - component: {fileID: 521538072}
+  - component: {fileID: 521538074}
+  - component: {fileID: 521538073}
   m_Layer: 5
   m_Name: Enemy
   m_TagString: Untagged
@@ -1067,6 +1069,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a3842e087c24d108b946b2e07b1a576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &521538073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521538068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073707f74e7b433b8add5dd240fda814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _battleHeroes:
+  - {fileID: 7134891879317885402}
+  - {fileID: 416397854}
+  - {fileID: 565026339}
+  _enemy: {fileID: 521538071}
+  _attackPositionGap: 1000
+  _attackPositionMoveTime: 2
+  _waitBeforeAttackTime: 0.5
+  _waitAfterAttackTime: 1
+--- !u!114 &521538074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521538068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3338903e7b6a49339617f82d38ea1bcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemy: {fileID: 521538071}
+  _image: {fileID: 1258055609}
 --- !u!1001 &565026337
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ namespace _Scripts.Battle
         [SerializeField] private Enemy _enemy;
         [SerializeField] private Image _image;
 
-        private void Start()
+        private void Awake()
         {
             _enemy.OnEnemyDataSetted += OnEnemyDataSetted;
         }

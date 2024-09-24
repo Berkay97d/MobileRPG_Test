@@ -16,11 +16,18 @@ namespace _Scripts.Battle
         {
             m_startPos = transform.localPosition;
             BattleHeroAttacker.OnPlayerHit += OnPlayerHit;
+            EnemyAttacker.OnEnemyHit += OnEnemyHit;
         }
-        
+
+        private void OnEnemyHit(BattleHero arg1, float arg2)
+        {
+            DoShake();
+        }
+
         private void OnDestroy()
         {
             BattleHeroAttacker.OnPlayerHit -= OnPlayerHit;
+            EnemyAttacker.OnEnemyHit -= OnEnemyHit;
         }
 
         private void Update()
