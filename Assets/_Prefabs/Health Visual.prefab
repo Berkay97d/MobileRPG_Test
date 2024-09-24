@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40bc8288aeb247dd8b6722acb8701aa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mainTransform: {fileID: 2058450824148425931}
   _health: {fileID: 0}
   _healthBarRed: {fileID: 971995787535123536}
   _healthBarWhite: {fileID: 2886544611842714919}

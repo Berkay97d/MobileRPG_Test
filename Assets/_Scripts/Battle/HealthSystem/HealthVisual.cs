@@ -19,16 +19,23 @@ namespace _Scripts.Battle
         private void Awake()
         {
             _health.OnDamaged += OnDamaged;
+            _health.OnDead += OnDead;
         }
-
+        
         private void OnDestroy()
         {
             _health.OnDamaged -= OnDamaged;
+            _health.OnDead -= OnDead;
         }
 
         private void OnDamaged()
         {
             UpdateHealthBar();
+        }
+        
+        private void OnDead()
+        {
+            CloseHealthBar();
         }
         
         private void UpdateHealthBar()
@@ -46,7 +53,17 @@ namespace _Scripts.Battle
                 _healthBarWhite.DOFillAmount(fillAmount, _whiteBarReduceTime)
                     .SetEase(Ease.OutSine);
             }
+        }
+
+        private void CloseHealthBar()
+        {
+            StartCoroutine(CloseRoutine());
             
+            IEnumerator CloseRoutine()
+            {
+                yield return new WaitForSeconds(1.25f);
+                gameObject.SetActive(false);
+            }
         }
     }
 }
