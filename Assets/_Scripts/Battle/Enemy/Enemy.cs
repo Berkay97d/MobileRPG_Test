@@ -9,31 +9,23 @@ namespace _Scripts.Battle
     {
         [SerializeField] private EnemyDataContainerSO _enemyDataContainer;
         [SerializeField] private Health _health;
-        [SerializeField] private Image _image;
+
+        public event Action<EnemyData> OnEnemyDataSetted; 
         
         private EnemyData m_enemyData;
         
 
         private void Awake()
         {
-            m_enemyData = _enemyDataContainer.GetEnemyDataByBattleCount();
-            _health.SetMaxHealth(m_enemyData._health);
-            _image.sprite = m_enemyData._sprite;
-        }
-
-        private void Start()
-        {
-            BattleHeroAttacker.OnPlayerAttackEnd += OnPlayerAttackEnd;
-        }
-
-        private void OnDestroy()
-        {
-            BattleHeroAttacker.OnPlayerAttackEnd -= OnPlayerAttackEnd;
-        }
-
-        private void OnPlayerAttackEnd()
-        {
+            SetEnemyData(_enemyDataContainer.GetEnemyDataByBattleCount());
             
+            _health.SetMaxHealth(m_enemyData._health);
+        }
+        
+        private void SetEnemyData(EnemyData enemyData)
+        {
+            m_enemyData = enemyData;
+            OnEnemyDataSetted?.Invoke(enemyData);
         }
 
         public Health GetHealth()
