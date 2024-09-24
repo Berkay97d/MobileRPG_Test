@@ -39,6 +39,8 @@ namespace _Scripts.Battle
 
         private void OnPlayerAttackEnd()
         {
+            if (!_enemy.GetIsAlive()) return;
+            
             StartAttack();   
         }
 

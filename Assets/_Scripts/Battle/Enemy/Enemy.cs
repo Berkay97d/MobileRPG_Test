@@ -10,18 +10,32 @@ namespace _Scripts.Battle
         [SerializeField] private EnemyDataContainerSO _enemyDataContainer;
         [SerializeField] private Health _health;
 
-        public event Action<EnemyData> OnEnemyDataSetted; 
+        public event Action<EnemyData> OnEnemyDataSetted;
+        public static event Action<Enemy> OnEnemyDead;
         
         private EnemyData m_enemyData;
+        private bool m_isAlive = true;
         
 
         private void Start()
         {
             SetEnemyData(_enemyDataContainer.GetEnemyDataByBattleCount());
-            
             _health.SetMaxHealth(m_enemyData._health);
+            
+            _health.OnDead += OnDead;
         }
-        
+
+        private void OnDestroy()
+        {
+            _health.OnDead -= OnDead;
+        }
+
+        private void OnDead()
+        {
+            m_isAlive = false;
+            OnEnemyDead?.Invoke(this);
+        }
+
         private void SetEnemyData(EnemyData enemyData)
         {
             m_enemyData = enemyData;
@@ -36,6 +50,11 @@ namespace _Scripts.Battle
         public EnemyData GetEnemyData()
         {
             return m_enemyData;
+        }
+
+        public bool GetIsAlive()
+        {
+            return m_isAlive;
         }
         
     }

@@ -16,7 +16,7 @@ MonoBehaviour:
   - _heroID: 0
     _name: Hero1
     _maxHealth: 2
-    _attackDamage: 3
+    _attackDamage: 6
     _experience: 4
     _level: 5
     _sprite: {fileID: -982556386, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
