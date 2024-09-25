@@ -8,7 +8,7 @@ namespace _Scripts.Battle
     public class OnFightOverArgs : EventArgs
     {
         private bool _isWin;
-        private List<BattleHero> _aliveHeroes;
+        public List<BattleHero> _aliveHeroes;
 
         public OnFightOverArgs(bool isWin, List<BattleHero> aliveHeroes)
         {

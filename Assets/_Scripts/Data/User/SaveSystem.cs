@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using _Scripts.Battle;
 using TMPro;
 using UnityEngine;
 
@@ -18,7 +20,33 @@ namespace _Scripts.Data.User
             MS_INSTANCE = this;
             m_userData = LoadData();
         }
-        
+
+        private void Start()
+        {
+            BattleController.OnFightOver += OnFightOver;
+        }
+
+        private void OnDestroy()
+        {
+            BattleController.OnFightOver -= OnFightOver;
+        }
+
+        private void OnFightOver(OnFightOverArgs eventArgs)
+        {
+            if (!eventArgs.GetIsWin()) return;
+
+            foreach (var battleHero in eventArgs._aliveHeroes)
+            {
+                Debug.Log("ALİVE HERO");
+                var index = m_userData.GetIndexOfExperienceById(battleHero.GetHeroData()._heroID);
+                m_userData._idToExperience[index] += 1;
+            }
+            
+            m_userData.IncreaseBattleCount();
+            
+            SaveData(m_userData);
+        }
+
         private void SaveData(UserData data)
         {
             string path = Application.dataPath + "/Resources/Data/savefile.json";
@@ -52,6 +80,7 @@ namespace _Scripts.Data.User
             foreach (var defaultOwnedHeroId in _defaultOwnedHeroIds)
             {
                 userData.AddHeroToUser(defaultOwnedHeroId);
+                userData._idToExperience.Add(0);
             }
             
             SaveData(userData);

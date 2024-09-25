@@ -84,6 +84,11 @@ namespace _Scripts.Battle
             _health.SetMaxHealth(m_heroData._maxHealth);
         }
 
+        public HeroData GetHeroData()
+        {
+            return m_heroData;
+        }
+
         public void SetIsAttackHero(bool isAttackHero)
         {
             OnIsAttackHeroSetted?.Invoke(isAttackHero);
