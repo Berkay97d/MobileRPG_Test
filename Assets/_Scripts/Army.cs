@@ -33,6 +33,11 @@ namespace _Scripts
             return ArmyActionResult.ADDED;
         }
 
+        public static void ClearArmy()
+        {
+            MS_HEROES.Clear();
+        }
+
         public static List<HeroData> GetAllHeroDatas()
         {
             return MS_HEROES;

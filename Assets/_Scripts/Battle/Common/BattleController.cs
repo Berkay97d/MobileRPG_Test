@@ -76,6 +76,7 @@ namespace _Scripts.Battle
             }
             
             OnFightOver?.Invoke(new OnFightOverArgs(true, aliveHeroes));
+            Army.ClearArmy();
         }
 
         private void OnHeroDead(BattleHero battleHero)
@@ -85,6 +86,7 @@ namespace _Scripts.Battle
             if (_heroKillCount >= 3)
             {
                 OnFightOver?.Invoke(new OnFightOverArgs(false, null));
+                Army.ClearArmy();
             }
         }
     }
