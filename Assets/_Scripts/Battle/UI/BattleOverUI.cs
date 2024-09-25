@@ -32,7 +32,7 @@ namespace _Scripts.Battle.UI
             
             IEnumerator UIRoutine()
             {
-                yield return new WaitForSeconds(3f);
+                yield return new WaitForSeconds(4f);
 
                 _winLoseText.text = eventArgs.GetIsWin() ? "YOU WİN!" : "YOU LOST!";
 

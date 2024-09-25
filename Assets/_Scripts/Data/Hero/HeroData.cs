@@ -13,15 +13,15 @@ public struct HeroData
     public float _startAttackDamage;
     public Sprite _sprite;
 
-    public float GetMaxHealth(int experience)
+    public float GetMaxHealth()
     {
-        int level = experience/ 5;
+        int level = SaveSystem.GetUserData().GetExperienceById(_heroID)/ 5;
         return _startMaxHealth * (1 + (level * MS_UPGRADERATIO / 100f));
     }
 
-    public float GetAttackDamage(int experience)
+    public float GetAttackDamage()
     {
-        int level = experience / 5;
+        int level = SaveSystem.GetUserData().GetExperienceById(_heroID)/ 5;
         return _startAttackDamage * (1 + (level * MS_UPGRADERATIO / 100f));
     }
 

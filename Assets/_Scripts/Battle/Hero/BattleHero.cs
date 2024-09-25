@@ -82,7 +82,7 @@ namespace _Scripts.Battle
             m_heroData = heroData;
             OnHeroDataSetted?.Invoke(m_heroData);
             
-            _health.SetMaxHealth(m_heroData.GetMaxHealth(SaveSystem.GetUserData().GetExperienceById(heroData._heroID)));
+            _health.SetMaxHealth(m_heroData.GetMaxHealth());
         }
 
         public HeroData GetHeroData()

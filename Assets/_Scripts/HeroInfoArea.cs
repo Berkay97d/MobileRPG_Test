@@ -36,8 +36,8 @@ namespace _Scripts
             _heroImage.sprite = heroData._sprite;
             _name.text = heroData._name;
             
-            _health.text = heroData.GetMaxHealth(SaveSystem.GetUserData().GetExperienceById(heroData._heroID)).ToString();
-            _attack.text = heroData.GetAttackDamage(SaveSystem.GetUserData().GetExperienceById(heroData._heroID)).ToString();
+            _health.text = heroData.GetMaxHealth().ToString();
+            _attack.text = heroData.GetAttackDamage().ToString();
             _experience.text = SaveSystem.GetUserData().GetExperienceById(heroData._heroID).ToString();
             _level.text = ((SaveSystem.GetUserData().GetExperienceById(heroData._heroID) / 5) +1).ToString();
         }

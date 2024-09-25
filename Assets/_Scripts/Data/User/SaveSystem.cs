@@ -79,7 +79,6 @@ namespace _Scripts.Data.User
         {
             foreach (var battleHero in battleHeroes)
             {
-                Debug.Log("ALİVE HERO");
                 m_userData.IncreaseExperienceById(battleHero.GetHeroData()._heroID);
             }
         }
