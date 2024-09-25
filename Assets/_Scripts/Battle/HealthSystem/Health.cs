@@ -8,7 +8,7 @@ namespace _Scripts.Battle
         private float m_maxHealth;
         private float m_currentHealth;
 
-        public event Action OnDamaged;
+        public event Action<float> OnDamaged;
         public event Action OnDead;
 
         
@@ -16,7 +16,7 @@ namespace _Scripts.Battle
         public void Damage(float damage)
         {
             m_currentHealth -= damage;
-            OnDamaged?.Invoke();
+            OnDamaged?.Invoke(damage);
 
             if (m_currentHealth <= 0)
             {

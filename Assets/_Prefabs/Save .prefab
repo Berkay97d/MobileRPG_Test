@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _defaultOwnedHeroIds: 000000000100000002000000
   _heroDataContainerSo: {fileID: 11400000, guid: 6b4bb9a1434075247b6072f5f53f2cae, type: 2}
+  _toGainHeroBattleCount: 5

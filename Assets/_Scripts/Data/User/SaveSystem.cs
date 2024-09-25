@@ -12,6 +12,7 @@ namespace _Scripts.Data.User
     {
         [SerializeField] private int[] _defaultOwnedHeroIds;
         [SerializeField] private HeroDataContainerSO _heroDataContainerSo;
+        [SerializeField] private int _toGainHeroBattleCount;
         
         
         private static SaveSystem MS_INSTANCE;
@@ -53,7 +54,7 @@ namespace _Scripts.Data.User
             
             m_userData.IncreaseBattleCount();
 
-            if (m_userData._battleCount % 2 == 0)
+            if (m_userData._battleCount % _toGainHeroBattleCount == 0)
             {
                 var heroData = GetUnequipRandomHero();
                 AddHeroToUserData(heroData._heroID);
@@ -64,16 +65,16 @@ namespace _Scripts.Data.User
 
         private void SaveData(UserData data)
         {
-            //string path = Application.dataPath + "/Resources/Data/savefile.json";
-            string path = Application.persistentDataPath + "/savefile.json"; //TODO CHANGE PATHS FOR MOBILE BUILD
+            string path = Application.dataPath + "/Resources/Data/savefile.json";
+            //string path = Application.persistentDataPath + "/savefile.json"; //TODO CHANGE PATHS FOR MOBILE BUILD
             string json = JsonUtility.ToJson(data);
             File.WriteAllText(path, json); 
         }
         
         private UserData LoadData()
         {
-            //string path = Application.dataPath + "/Resources/Data/savefile.json";
-            string path = Application.persistentDataPath + "/savefile.json"; //TODO CHANGE PATHS FOR MOBILE BUILD
+            string path = Application.dataPath + "/Resources/Data/savefile.json";
+            //string path = Application.persistentDataPath + "/savefile.json"; //TODO CHANGE PATHS FOR MOBILE BUILD
             if (File.Exists(path))
             {
                 isNewData = false;
