@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using _Scripts.Data.User;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -57,7 +58,9 @@ namespace _Scripts.Battle
 
         private void OnPlayerHit(HeroData heroData)
         {
-            _enemy.GetHealth().Damage(heroData.GetAttackDamage());
+            var a = heroData.GetAttackDamage(SaveSystem.GetUserData().GetExperienceById(heroData._heroID));
+            Debug.Log("DAMAGE: " + a);
+            _enemy.GetHealth().Damage(heroData.GetAttackDamage(SaveSystem.GetUserData().GetExperienceById(heroData._heroID)));
         }
         
         private void OnEnemyDead(Enemy enemy)

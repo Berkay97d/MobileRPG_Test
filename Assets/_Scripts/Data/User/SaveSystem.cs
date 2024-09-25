@@ -38,8 +38,7 @@ namespace _Scripts.Data.User
             foreach (var battleHero in eventArgs._aliveHeroes)
             {
                 Debug.Log("ALİVE HERO");
-                var index = m_userData.GetIndexOfExperienceById(battleHero.GetHeroData()._heroID);
-                m_userData._idToExperience[index] += 1;
+                m_userData.IncreaseExperienceById(battleHero.GetHeroData()._heroID);
             }
             
             m_userData.IncreaseBattleCount();

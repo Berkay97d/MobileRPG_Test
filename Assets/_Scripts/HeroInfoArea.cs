@@ -1,4 +1,5 @@
 ﻿using System;
+using _Scripts.Data.User;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -34,10 +35,11 @@ namespace _Scripts
         {
             _heroImage.sprite = heroData._sprite;
             _name.text = heroData._name;
-            _health.text = heroData.GetMaxHealth().ToString();
-            _attack.text = heroData.GetAttackDamage().ToString();
-            _experience.text = heroData._experience.ToString();
-            _level.text = ((heroData._experience / 5) +1).ToString();
+            
+            _health.text = heroData.GetMaxHealth(SaveSystem.GetUserData().GetExperienceById(heroData._heroID)).ToString();
+            _attack.text = heroData.GetAttackDamage(SaveSystem.GetUserData().GetExperienceById(heroData._heroID)).ToString();
+            _experience.text = SaveSystem.GetUserData().GetExperienceById(heroData._heroID).ToString();
+            _level.text = ((SaveSystem.GetUserData().GetExperienceById(heroData._heroID) / 5) +1).ToString();
         }
 
         public static void OpenInfo(HeroData heroData)

@@ -35,13 +35,24 @@ namespace _Scripts.Data.User
             return _ownedHeroIds;
         }
 
-        public int GetIndexOfExperienceById(int Id)
+        public void IncreaseExperienceById(int Id)
         {
             for (int i = 0; i < _ownedHeroIds.Count; i++)
             {
                 if (Id == _ownedHeroIds[i])
                 {
-                    return i;
+                    _idToExperience[i]++;
+                }
+            }
+        }
+
+        public int GetExperienceById(int Id)
+        {
+            for (int i = 0; i < _ownedHeroIds.Count; i++)
+            {
+                if (Id == _ownedHeroIds[i])
+                {
+                    return _idToExperience[i];
                 }
             }
 

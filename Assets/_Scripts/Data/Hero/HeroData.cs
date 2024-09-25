@@ -1,4 +1,5 @@
 using System;
+using _Scripts.Data.User;
 using UnityEngine;
 
 [Serializable]
@@ -10,18 +11,19 @@ public struct HeroData
     public string _name;
     public float _startMaxHealth;
     public float _startAttackDamage;
-    public int _experience;
     public Sprite _sprite;
 
-    public float GetMaxHealth()
+    public float GetMaxHealth(int experience)
     {
-        int level = _experience / 5;
+        int level = experience/ 5;
         return _startMaxHealth * (1 + (level * MS_UPGRADERATIO / 100f));
     }
 
-    public float GetAttackDamage()
+    public float GetAttackDamage(int experience)
     {
-        int level = _experience / 5;
+        int level = experience / 5;
         return _startAttackDamage * (1 + (level * MS_UPGRADERATIO / 100f));
     }
+
+    
 }

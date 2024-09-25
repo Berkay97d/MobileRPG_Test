@@ -1,4 +1,5 @@
 ﻿using System;
+using _Scripts.Data.User;
 using _Scripts.HeroSelectionPage;
 using UnityEngine;
 
@@ -81,7 +82,7 @@ namespace _Scripts.Battle
             m_heroData = heroData;
             OnHeroDataSetted?.Invoke(m_heroData);
             
-            _health.SetMaxHealth(m_heroData.GetMaxHealth());
+            _health.SetMaxHealth(m_heroData.GetMaxHealth(SaveSystem.GetUserData().GetExperienceById(heroData._heroID)));
         }
 
         public HeroData GetHeroData()
