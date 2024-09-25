@@ -1,13 +1,33 @@
 ﻿using System;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace _Scripts.Battle
 {
+    public class OnFightOverArgs : EventArgs
+    {
+        private bool _isWin;
+        private List<BattleHero> _aliveHeroes;
+
+        public OnFightOverArgs(bool isWin, List<BattleHero> aliveHeroes)
+        {
+            _isWin = isWin;
+            _aliveHeroes = aliveHeroes;
+        }
+
+        public bool GetIsWin()
+        {
+            return _isWin;
+        }
+    }
+    
     public class BattleController : MonoBehaviour
     {
         [SerializeField] private Enemy _enemy;
-
-        public event Action<bool> OnFightOver; 
+        [SerializeField] private BattleHero[] _battleHeroes;
+        
+        public static event Action<OnFightOverArgs> OnFightOver; 
         
         private int _heroKillCount;
         
@@ -42,7 +62,17 @@ namespace _Scripts.Battle
         
         private void OnEnemyDead(Enemy enemy)
         {
-            OnFightOver?.Invoke(true);
+            var aliveHeroes = new List<BattleHero>();
+
+            foreach (var battleHero in _battleHeroes)
+            {
+                if (battleHero.GetIsAlive())
+                {
+                    aliveHeroes.Add(battleHero);
+                }
+            }
+            
+            OnFightOver?.Invoke(new OnFightOverArgs(true, aliveHeroes));
         }
 
         private void OnHeroDead(BattleHero battleHero)
@@ -51,7 +81,7 @@ namespace _Scripts.Battle
 
             if (_heroKillCount >= 3)
             {
-                OnFightOver?.Invoke(false);
+                OnFightOver?.Invoke(new OnFightOverArgs(false, null));
             }
         }
     }

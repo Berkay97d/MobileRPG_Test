@@ -9,7 +9,6 @@ namespace _Scripts.Battle.UI
 {
     public class BattleOverUI : MonoBehaviour
     {
-        [SerializeField] private BattleController _battleController;
         [SerializeField] private Transform _mainTransform;
         [SerializeField] private TMP_Text _winLoseText;
         [SerializeField] private Button _menuButton;
@@ -19,15 +18,15 @@ namespace _Scripts.Battle.UI
         {
             _menuButton.onClick.AddListener(() => SceneManager.LoadScene(0));
             
-            _battleController.OnFightOver += OnFightOver;
+            BattleController.OnFightOver += OnFightOver;
         }
 
         private void OnDestroy()
         {
-            _battleController.OnFightOver -= OnFightOver;
+            BattleController.OnFightOver -= OnFightOver;
         }
 
-        private void OnFightOver(bool isWin)
+        private void OnFightOver(OnFightOverArgs eventArgs)
         {
             StartCoroutine(UIRoutine());
             
@@ -35,7 +34,7 @@ namespace _Scripts.Battle.UI
             {
                 yield return new WaitForSeconds(3f);
 
-                _winLoseText.text = isWin ? "YOU WİN!" : "YOU LOST!";
+                _winLoseText.text = eventArgs.GetIsWin() ? "YOU WİN!" : "YOU LOST!";
 
                 _mainTransform.gameObject.SetActive(true);
 
