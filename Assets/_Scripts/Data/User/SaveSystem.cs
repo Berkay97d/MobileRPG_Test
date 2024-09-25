@@ -14,11 +14,9 @@ namespace _Scripts.Data.User
         [SerializeField] private HeroDataContainerSO _heroDataContainerSo;
         [SerializeField] private int _toGainHeroBattleCount;
         
-        
         private static SaveSystem MS_INSTANCE;
         private UserData m_userData;
-        private bool isNewData = false;
-        
+        private bool m_isNewData ;
         
         
         private void Awake()
@@ -26,7 +24,7 @@ namespace _Scripts.Data.User
             MS_INSTANCE = this;
             m_userData = LoadData();
 
-            if (isNewData)
+            if (m_isNewData)
             {
                 AddDefaultHeroes(m_userData);   
             }
@@ -46,23 +44,12 @@ namespace _Scripts.Data.User
         {
             if (!eventArgs.GetIsWin()) return;
 
-            foreach (var battleHero in eventArgs._aliveHeroes)
-            {
-                Debug.Log("ALİVE HERO");
-                m_userData.IncreaseExperienceById(battleHero.GetHeroData()._heroID);
-            }
-            
+            BoostHeroExperience(eventArgs._aliveHeroes);
             m_userData.IncreaseBattleCount();
-
-            if (m_userData._battleCount % _toGainHeroBattleCount == 0)
-            {
-                var heroData = GetUnequipRandomHero();
-                AddHeroToUserData(heroData._heroID);
-            }
-            
+            GiveNewHero();
             SaveData(m_userData);
         }
-
+        
         private void SaveData(UserData data)
         {
             string path = Application.dataPath + "/Resources/Data/savefile.json";
@@ -77,19 +64,33 @@ namespace _Scripts.Data.User
             //string path = Application.persistentDataPath + "/savefile.json"; //TODO CHANGE PATHS FOR MOBILE BUILD
             if (File.Exists(path))
             {
-                isNewData = false;
-                Debug.Log("VAR OLAN DATA GETİRİLDİ");
+                m_isNewData = false;
                 string json = File.ReadAllText(path);
                 UserData data = JsonUtility.FromJson<UserData>(json);
                 return data;
             }
 
-            isNewData = true;
-            var userData = new UserData();
-            //AddDefaultHeroes(userData);
-            Debug.Log("YENİ DATA OLUŞTURULUP GÖNDERİLDİ");
-            return userData;
+            m_isNewData = true;
+           
+            return new UserData();
+        }
+        
+        private void BoostHeroExperience(List<BattleHero> battleHeroes)
+        {
+            foreach (var battleHero in battleHeroes)
+            {
+                Debug.Log("ALİVE HERO");
+                m_userData.IncreaseExperienceById(battleHero.GetHeroData()._heroID);
+            }
+        }
 
+        private void GiveNewHero()
+        {
+            if (m_userData._battleCount % _toGainHeroBattleCount == 0)
+            {
+                var heroData = GetUnequipRandomHero();
+                AddHeroToUserData(heroData._heroID);
+            }
         }
 
         private void AddDefaultHeroes(UserData userData)

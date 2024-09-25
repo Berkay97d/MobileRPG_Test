@@ -45,7 +45,6 @@ namespace _Scripts.Battle
 
         private void DoShake()
         {
-            Debug.Log("AAAAAAAAAAAAAAAAA");
             transform
                 .DOShakePosition(MS_DURATION, MS_STRENGTH, MS_VIBRATO)
                 .OnComplete(() => transform.localPosition = m_startPos); 

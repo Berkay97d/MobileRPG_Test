@@ -31,11 +31,6 @@ namespace _Scripts.Data.User
             _ownedHeroIds.Add(heroId);
         }
         
-        public List<int> GetOwnedHeroIds()
-        {
-            return _ownedHeroIds;
-        }
-
         public void IncreaseExperienceById(int Id)
         {
             for (int i = 0; i < _ownedHeroIds.Count; i++)

@@ -58,8 +58,6 @@ namespace _Scripts.Battle
 
         private void OnPlayerHit(HeroData heroData)
         {
-            var a = heroData.GetAttackDamage(SaveSystem.GetUserData().GetExperienceById(heroData._heroID));
-            Debug.Log("DAMAGE: " + a);
             _enemy.GetHealth().Damage(heroData.GetAttackDamage(SaveSystem.GetUserData().GetExperienceById(heroData._heroID)));
         }
         

@@ -18,8 +18,6 @@ namespace _Scripts.HeroSelectionPage
         private void OpenMarketHeroes()
         {
             var heroIds = SaveSystem.GetUserData()._ownedHeroIds;
-
-            Debug.Log("OWNED HERO ID COUNT: " + heroIds.Count);
             
             for (int i = 0; i < heroIds.Count; i++)
             {
