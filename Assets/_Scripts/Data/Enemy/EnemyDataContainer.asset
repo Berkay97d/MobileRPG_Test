@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyDatas:
   - _sprite: {fileID: 936529303, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
-    _health: 10
-    _attack: 5
+    _health: 15
+    _attack: 7
   - _sprite: {fileID: -1916920396, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
-    _health: 10
-    _attack: 5
+    _health: 7
+    _attack: 15
   - _sprite: {fileID: -1487924812, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
-    _health: 10
-    _attack: 5
+    _health: 11
+    _attack: 11
   - _sprite: {fileID: 509776603, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
     _health: 10
     _attack: 5

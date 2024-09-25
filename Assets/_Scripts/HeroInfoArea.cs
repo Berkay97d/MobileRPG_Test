@@ -34,10 +34,10 @@ namespace _Scripts
         {
             _heroImage.sprite = heroData._sprite;
             _name.text = heroData._name;
-            _health.text = heroData._maxHealth.ToString();
-            _attack.text = heroData._attackDamage.ToString();
+            _health.text = heroData.GetMaxHealth().ToString();
+            _attack.text = heroData.GetAttackDamage().ToString();
             _experience.text = heroData._experience.ToString();
-            _level.text = heroData._level.ToString();
+            _level.text = ((heroData._experience / 5) +1).ToString();
         }
 
         public static void OpenInfo(HeroData heroData)

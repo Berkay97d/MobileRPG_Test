@@ -1,4 +1,5 @@
-﻿using _Scripts.Data.User;
+﻿using System;
+using _Scripts.Data.User;
 using UnityEngine;
 
 namespace _Scripts.Data.Enemy
@@ -13,5 +14,7 @@ namespace _Scripts.Data.Enemy
         {
             return enemyDatas[SaveSystem.GetUserData().GetBattleCount()];
         }
+
+        
     }
 }

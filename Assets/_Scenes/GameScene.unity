@@ -2440,7 +2440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b577fe34f8904f2c948200092605a235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultOwnedHeroIds: 0000000001000000020000000300000004000000
+  _defaultOwnedHeroIds: 000000000100000002000000
 --- !u!1001 &1633347516
 PrefabInstance:
   m_ObjectHideFlags: 0

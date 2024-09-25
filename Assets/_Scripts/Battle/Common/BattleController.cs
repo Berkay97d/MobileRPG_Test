@@ -57,7 +57,7 @@ namespace _Scripts.Battle
 
         private void OnPlayerHit(HeroData heroData)
         {
-            _enemy.GetHealth().Damage(heroData._attackDamage);
+            _enemy.GetHealth().Damage(heroData.GetAttackDamage());
         }
         
         private void OnEnemyDead(Enemy enemy)
