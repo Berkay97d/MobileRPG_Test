@@ -44,6 +44,11 @@ namespace _Scripts
             Debug.LogError("Unreachable Code");
             return new HeroData();
         }
+
+        public HeroData[] GetAllHeroDatas()
+        {
+            return _heroDatas;
+        }
         
     }
 }

@@ -6,13 +6,13 @@ namespace _Scripts.Data.User
     {
         public int _battleCount;
         public List<int> _ownedHeroIds; //HASH SET NONSERILIZABLE
-        public List<int> _idToExperience; //DICTINORY NONSERILIZABLE
+        public List<int> _ownedHeroExperience; //DICTINORY NONSERILIZABLE
 
         public UserData(int battleCount = 0)
         {
             _battleCount = battleCount;
             _ownedHeroIds = new List<int>();
-            _idToExperience = new List<int>();;
+            _ownedHeroExperience = new List<int>();
         }
 
         public int GetBattleCount()
@@ -27,9 +27,10 @@ namespace _Scripts.Data.User
 
         public void AddHeroToUser(int heroId)
         {
+            _ownedHeroExperience.Add(0);
             _ownedHeroIds.Add(heroId);
         }
-
+        
         public List<int> GetOwnedHeroIds()
         {
             return _ownedHeroIds;
@@ -41,7 +42,7 @@ namespace _Scripts.Data.User
             {
                 if (Id == _ownedHeroIds[i])
                 {
-                    _idToExperience[i]++;
+                    _ownedHeroExperience[i]++;
                 }
             }
         }
@@ -52,7 +53,7 @@ namespace _Scripts.Data.User
             {
                 if (Id == _ownedHeroIds[i])
                 {
-                    return _idToExperience[i];
+                    return _ownedHeroExperience[i];
                 }
             }
 
