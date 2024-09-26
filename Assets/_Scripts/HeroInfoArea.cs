@@ -1,4 +1,6 @@
 ﻿using System;
+using _Scripts.Battle;
+using _Scripts.Data.Enemy;
 using _Scripts.Data.User;
 using TMPro;
 using UnityEngine;
@@ -42,9 +44,47 @@ namespace _Scripts
             _level.text = ((SaveSystem.GetUserData().GetExperienceById(heroData._heroID) / 5) +1).ToString();
         }
 
-        public static void OpenInfo(HeroData heroData)
+        private void AdjustVisual(Enemy enemy)
+        {
+            var enemyData = enemy.GetEnemyData();
+            
+            _heroImage.sprite = enemyData._sprite;
+            _health.text = enemy.GetHealth().GetCurrentHealth().ToString();
+            _attack.text = enemyData._attack.ToString();
+
+            _name.text = "-";
+            _experience.text = "-";
+            _level.text = "-";
+        }
+
+        private void AdjustVisual(BattleHero battleHero)
+        {
+            var heroData = battleHero.GetHeroData();
+            
+            _heroImage.sprite = heroData._sprite;
+            _name.text = heroData._name;
+
+            _health.text = battleHero.GetHealth().GetCurrentHealth().ToString();
+            _attack.text = heroData.GetAttackDamage().ToString();
+            _experience.text = SaveSystem.GetUserData().GetExperienceById(heroData._heroID).ToString();
+            _level.text = ((SaveSystem.GetUserData().GetExperienceById(heroData._heroID) / 5) +1).ToString();
+        }
+        
+        public static void OpenInfoMenu(HeroData heroData)
         {
             MS_INSTANCE.AdjustVisual(heroData);
+            MS_INSTANCE.SetActive(true);
+        }
+        
+        public static void OpenInfoBattle(BattleHero battleHero)
+        {
+            MS_INSTANCE.AdjustVisual(battleHero);
+            MS_INSTANCE.SetActive(true);
+        }
+        
+        public static void OpenInfoBattle(Enemy enemy)
+        {
+            MS_INSTANCE.AdjustVisual(enemy);
             MS_INSTANCE.SetActive(true);
         }
 

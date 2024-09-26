@@ -39,7 +39,7 @@ public class MarketHero : MonoBehaviour
     private void OnLongPressStart()
     {
         if (!_mainTransform.gameObject.activeSelf) return;
-        HeroInfoArea.OpenInfo(m_heroData);
+        HeroInfoArea.OpenInfoMenu(m_heroData);
     }
     
     private void OnLongPressEnd()

@@ -1,5 +1,6 @@
 ﻿using System;
 using _Scripts.Data.Enemy;
+using _Scripts.HeroSelectionPage;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,7 @@ namespace _Scripts.Battle
 {
     public class Enemy : MonoBehaviour
     {
+        [SerializeField] private MarketHeroClickHandler _clickHandler;
         [SerializeField] private EnemyDataContainerSO _enemyDataContainer;
         [SerializeField] private Health _health;
 
@@ -22,11 +24,17 @@ namespace _Scripts.Battle
             SetEnemyData(_enemyDataContainer.GetEnemyDataByBattleCount());
             _health.SetMaxHealth(m_enemyData._health);
             
+            _clickHandler.OnLongPressStart += OnLongPressStart;
+            _clickHandler.OnLongPressEnd += OnLongPressEnd;
             _health.OnDead += OnDead;
         }
 
+       
+
         private void OnDestroy()
-        {
+        {   
+            _clickHandler.OnLongPressStart -= OnLongPressStart;
+            _clickHandler.OnLongPressEnd -= OnLongPressEnd;
             _health.OnDead -= OnDead;
         }
 
@@ -34,6 +42,16 @@ namespace _Scripts.Battle
         {
             m_isAlive = false;
             OnEnemyDead?.Invoke(this);
+        }
+        
+        private void OnLongPressEnd()
+        {
+            HeroInfoArea.CloseInfo();
+        }
+
+        private void OnLongPressStart()
+        {
+            HeroInfoArea.OpenInfoBattle(this);
         }
 
         private void SetEnemyData(EnemyData enemyData)

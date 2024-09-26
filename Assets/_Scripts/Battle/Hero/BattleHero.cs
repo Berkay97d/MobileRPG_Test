@@ -53,7 +53,7 @@ namespace _Scripts.Battle
         {
             if (!m_canAttack) return;
             
-            HeroInfoArea.OpenInfo(m_heroData);
+            HeroInfoArea.OpenInfoBattle(this);
         }
     
         private void OnLongPressEnd()
