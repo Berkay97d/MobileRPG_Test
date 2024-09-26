@@ -19,6 +19,7 @@ namespace _Scripts.Battle
 
         public static event Action<BattleHero, float> OnEnemyHit;
         public static event Action OnEnemyAttackEnd;
+        public static bool ms_isEnemyAttacking;
         
         private void Start()
         {
@@ -51,6 +52,7 @@ namespace _Scripts.Battle
             
             IEnumerator AttackRoutine()
             {
+                ms_isEnemyAttacking = true;
                 var startPos = transform.position;
 
                 var _attackPosition = new Vector3(target.transform.position.x + _attackPositionGap,
@@ -78,6 +80,7 @@ namespace _Scripts.Battle
                     .OnComplete(() =>
                     {
                         OnEnemyAttackEnd?.Invoke();
+                        ms_isEnemyAttacking = false;
                     });
             }
         }

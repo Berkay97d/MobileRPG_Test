@@ -78,6 +78,11 @@ namespace _Scripts
         
         public static void OpenInfoBattle(BattleHero battleHero)
         {
+            if (BattleHeroAttacker.ms_isHeroAttacking || EnemyAttacker.ms_isEnemyAttacking)
+            {
+                return;
+            }
+            
             MS_INSTANCE.AdjustVisual(battleHero);
             MS_INSTANCE.SetActive(true);
         }

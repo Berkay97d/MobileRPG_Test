@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace _Scripts.Battle
@@ -18,9 +19,11 @@ namespace _Scripts.Battle
         public static event Action OnPlayerAttackStart;
         public static event Action<HeroData> OnPlayerHit; 
         public static event Action OnPlayerAttackEnd;
-
+        public static bool ms_isHeroAttacking;
+        
         private RectTransform m_startTransform;
         private HeroData m_heroData;
+        
 
 
         private void Awake()
@@ -45,6 +48,7 @@ namespace _Scripts.Battle
             
             IEnumerator AttackRoutine()
             {
+                ms_isHeroAttacking = true;
                 var startPos = transform.position;
                 
                 transform.DOMove(_attackPosition.position, _attackPositionMoveTime);
@@ -70,6 +74,7 @@ namespace _Scripts.Battle
                     .OnComplete(() =>
                     {
                         OnPlayerAttackEnd?.Invoke();
+                        ms_isHeroAttacking = false;
                     });
 
             }
