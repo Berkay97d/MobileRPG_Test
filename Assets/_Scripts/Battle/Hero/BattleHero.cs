@@ -52,6 +52,7 @@ namespace _Scripts.Battle
         private void OnLongPressStart()
         {
             if (!m_canAttack) return;
+            if (!m_isAlive) return;
             
             HeroInfoArea.OpenInfoBattle(this);
         }

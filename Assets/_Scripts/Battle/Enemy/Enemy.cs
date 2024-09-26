@@ -28,9 +28,7 @@ namespace _Scripts.Battle
             _clickHandler.OnLongPressEnd += OnLongPressEnd;
             _health.OnDead += OnDead;
         }
-
-       
-
+        
         private void OnDestroy()
         {   
             _clickHandler.OnLongPressStart -= OnLongPressStart;
@@ -51,6 +49,8 @@ namespace _Scripts.Battle
 
         private void OnLongPressStart()
         {
+            if (!m_isAlive) return;
+            
             HeroInfoArea.OpenInfoBattle(this);
         }
 
