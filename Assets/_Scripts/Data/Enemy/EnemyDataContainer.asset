@@ -23,8 +23,8 @@ MonoBehaviour:
     _health: 16
     _attack: 8
   - _sprite: {fileID: 509776603, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
-    _health: 17
-    _attack: 8
+    _health: 30
+    _attack: 10
   - _sprite: {fileID: 71198371, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
     _health: 17
     _attack: 9
@@ -35,8 +35,8 @@ MonoBehaviour:
     _health: 18
     _attack: 9
   - _sprite: {fileID: 1184793935, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
-    _health: 18
-    _attack: 9
+    _health: 35
+    _attack: 12
   - _sprite: {fileID: 1021534867, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
     _health: 19
     _attack: 10
@@ -47,8 +47,8 @@ MonoBehaviour:
     _health: 20
     _attack: 10
   - _sprite: {fileID: 105567367, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
-    _health: 20
-    _attack: 10
+    _health: 40
+    _attack: 15
   - _sprite: {fileID: -1652648135, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
     _health: 20
     _attack: 10
@@ -56,8 +56,8 @@ MonoBehaviour:
     _health: 20
     _attack: 10
   - _sprite: {fileID: 1045172100, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
-    _health: 22
-    _attack: 11
+    _health: 35
+    _attack: 8
   - _sprite: {fileID: 338093858, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
     _health: 22
     _attack: 11
@@ -74,7 +74,7 @@ MonoBehaviour:
     _health: 25
     _attack: 15
   - _sprite: {fileID: -584662881, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
-    _health: 25
+    _health: 40
     _attack: 15
   - _sprite: {fileID: -904544408, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
     _health: 25
@@ -86,7 +86,7 @@ MonoBehaviour:
     _health: 25
     _attack: 15
   - _sprite: {fileID: -2074828833, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
-    _health: 25
+    _health: 50
     _attack: 15
   - _sprite: {fileID: -744386591, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
     _health: 25
@@ -95,7 +95,7 @@ MonoBehaviour:
     _health: 25
     _attack: 15
   - _sprite: {fileID: -511667908, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
-    _health: 25
+    _health: 55
     _attack: 15
   - _sprite: {fileID: -62117360, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
     _health: 25
