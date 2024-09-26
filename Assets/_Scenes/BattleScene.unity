@@ -269,6 +269,7 @@ GameObject:
   - component: {fileID: 92098638}
   - component: {fileID: 92098637}
   - component: {fileID: 92098639}
+  - component: {fileID: 92098640}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -345,6 +346,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a3842e087c24d108b946b2e07b1a576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &92098640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92098635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7458ab6a3c0be444f81d97af96e9e6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bgSprites:
+  - {fileID: 544497041, guid: 39d3ff2a54d78da48bb4937d7a632230, type: 3}
+  - {fileID: -1203023134, guid: 39d3ff2a54d78da48bb4937d7a632230, type: 3}
+  - {fileID: -1951241396, guid: 39d3ff2a54d78da48bb4937d7a632230, type: 3}
+  - {fileID: 1304905171, guid: 39d3ff2a54d78da48bb4937d7a632230, type: 3}
+  _bgImage: {fileID: 92098637}
 --- !u!1 &256875488
 GameObject:
   m_ObjectHideFlags: 0

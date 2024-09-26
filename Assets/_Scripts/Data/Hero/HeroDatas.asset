@@ -17,59 +17,49 @@ MonoBehaviour:
     _name: Hero1
     _startMaxHealth: 5
     _startAttackDamage: 10
-    _experience: 0
     _sprite: {fileID: -982556386, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
   - _heroID: 1
     _name: Hero2
     _startMaxHealth: 10
     _startAttackDamage: 5
-    _experience: 0
     _sprite: {fileID: -2080961870, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
   - _heroID: 2
     _name: Hero3
     _startMaxHealth: 7
     _startAttackDamage: 8
-    _experience: 0
     _sprite: {fileID: 1573201573, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
   - _heroID: 3
     _name: Hero4
-    _startMaxHealth: 8
-    _startAttackDamage: 7
-    _experience: 0
+    _startMaxHealth: 10
+    _startAttackDamage: 10
     _sprite: {fileID: 428664467, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
   - _heroID: 4
     _name: Hero5
-    _startMaxHealth: 3
+    _startMaxHealth: 12
     _startAttackDamage: 12
-    _experience: 0
     _sprite: {fileID: 1111249066, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
   - _heroID: 5
     _name: Hero6
-    _startMaxHealth: 12
-    _startAttackDamage: 3
-    _experience: 0
+    _startMaxHealth: 25
+    _startAttackDamage: 5
     _sprite: {fileID: 639549679, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
   - _heroID: 6
     _name: Hero7
-    _startMaxHealth: 6
-    _startAttackDamage: 9
-    _experience: 0
+    _startMaxHealth: 15
+    _startAttackDamage: 15
     _sprite: {fileID: 1076751007, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
   - _heroID: 7
     _name: Hero8
-    _startMaxHealth: 9
-    _startAttackDamage: 6
-    _experience: 0
+    _startMaxHealth: 18
+    _startAttackDamage: 18
     _sprite: {fileID: -1781087546, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
   - _heroID: 8
     _name: Hero9
-    _startMaxHealth: 11
-    _startAttackDamage: 4
-    _experience: 0
+    _startMaxHealth: 20
+    _startAttackDamage: 20
     _sprite: {fileID: 1364055732, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
   - _heroID: 9
     _name: Hero10
-    _startMaxHealth: 11
-    _startAttackDamage: 4
-    _experience: 0
+    _startMaxHealth: 40
+    _startAttackDamage: 5
     _sprite: {fileID: 1368463153, guid: 29a3d7e24e5904d40b832398879f7194, type: 3}
