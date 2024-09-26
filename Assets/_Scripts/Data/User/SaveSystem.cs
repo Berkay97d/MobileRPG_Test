@@ -42,9 +42,15 @@ namespace _Scripts.Data.User
 
         private void OnFightOver(OnFightOverArgs eventArgs)
         {
-            if (!eventArgs.GetIsWin()) return;
+            if (eventArgs.GetIsWin())
+            {
+                m_userData.IncreaseBattleCount();
+                BoostHeroExperience(eventArgs._aliveHeroes);
+                GiveNewHero();
+                SaveData(m_userData);
+                return;
+            }
 
-            BoostHeroExperience(eventArgs._aliveHeroes);
             m_userData.IncreaseBattleCount();
             GiveNewHero();
             SaveData(m_userData);
